@@ -10,3 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+//include
+# include <limits.h>
+
+//libft
+int	ft_atoi(const char *str);
+
+//struct
+typedef struct s_list
+{
+	struct s_list	*pre;
+	struct s_list	*next;
+	int				num;
+	int				index;
+}				t_list;
+
+#endif
