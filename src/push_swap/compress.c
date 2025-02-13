@@ -10,3 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../include/push_swap.h"
+
+void	compress(t_list **stack_a)
+{
+    int *lst;
+
+    lst = (int *)malloc(sizeof(int) * )
+}
