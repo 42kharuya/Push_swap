@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kharuya <kharuya@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 18:58:06 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/10 06:40:32 by kharuya          ###   ########.fr       */
+/*   Created: 2025/02/13 15:53:46 by kharuya           #+#    #+#             */
+/*   Updated: 2025/02/13 15:54:01 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
