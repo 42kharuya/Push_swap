@@ -6,7 +6,7 @@
 /*   By: kharuya <kharuya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:58:06 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/06 18:58:07 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/10 06:40:32 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define PUSH_SWAP_H
 
 //include
+# include <unistd.h>
 # include <limits.h>
-
-//libft
-int	ft_atoi(const char *str);
+# include <stdlib.h>
+# include <stdbool.h>
 
 //struct
 typedef struct s_list
@@ -27,5 +27,29 @@ typedef struct s_list
 	int				num;
 	int				index;
 }				t_list;
+
+//commands
+void	sa(t_list **stack_a);
+void	sb(t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b);
+void	pa(t_list **stack_a, t_list **stack_b);
+void	pb(t_list **stack_a, t_list **stack_b);
+void	ra(t_list **stack_a);
+void	rb(t_list **stack_b);
+void	rr(t_list **stack_a, t_list **stack_b);
+void	rra(t_list **stack_a);
+void	rrb(t_list **stack_b);
+void	rrr(t_list **stack_a, t_list **stack_b);
+
+//libft
+int		ft_atoi(const char *str);
+void	ft_putstr_fd(char *s, int fd);
+t_list	*ft_lstnew(int index, int num);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+t_list	*ft_lstfirst(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+
+//push_swap
+t_list *make_stack_a(int argc, char const *argv[]);
 
 #endif
