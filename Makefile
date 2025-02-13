@@ -8,7 +8,7 @@ PUSH_SWAP_FORDER 	= 	src/push_swap
 SRCS				=	$(LIBFT_FORDER)/ft_atoi.c $(LIBFT_FORDER)/ft_lstnew.c \
 							$(LIBFT_FORDER)/ft_lstadd_front.c $(LIBFT_FORDER)/ft_putstr_fd.c \
 							$(LIBFT_FORDER)/ft_lstfirst.c $(LIBFT_FORDER)/ft_lstlast.c \
-							$(LIBFT_FORDER)/ft_putstr_fd.c $(LIBFT_FORDER)/ft_lstsize.c \
+							$(LIBFT_FORDER)/ft_lstsize.c \
 							$(COMMANDS_FORDER)/command_p.c $(COMMANDS_FORDER)/command_r.c \
 							$(COMMANDS_FORDER)/command_rr.c $(COMMANDS_FORDER)/command_s.c \
 							$(PUSH_SWAP_FORDER)/push_swap.c $(PUSH_SWAP_FORDER)/make_stack_a.c \
