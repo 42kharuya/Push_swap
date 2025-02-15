@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:35 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/13 15:54:38 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/14 16:18:54 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	rra(t_list **stack_a)
 		*stack_a = (*stack_a)->pre;
 	}
 	(*stack_a)->num = last_index_num;
+	ft_putstr_fd("rra\n", 1);
 	return ;
 }
 
@@ -39,6 +40,7 @@ void	rrb(t_list **stack_b)
 		*stack_b = (*stack_b)->pre;
 	}
 	(*stack_b)->num = last_index_num;
+	ft_putstr_fd("rrb\n", 1);
 	return ;
 }
 
@@ -46,5 +48,6 @@ void	rrr(t_list **stack_a, t_list **stack_b)
 {
 	rra(stack_a);
 	rrb(stack_b);
+	ft_putstr_fd("rrr\n", 1);
 	return ;
 }

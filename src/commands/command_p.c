@@ -6,18 +6,22 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:19 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/13 15:54:22 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/15 02:27:41 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+#include <stdio.h>
 
 //コマンドの返り値をvoid型にしてしまうとmallocの割り当て失敗時のエラー処理などが実装できない。
 static void	push_and_rewrite(t_list **stack, t_list *stack_top)
 {
 	t_list	*head;
 
-	ft_lstadd_front(stack, stack_top);
+	if (!(*stack))
+		*stack = ft_lstnew(stack_top->index, stack_top->num);
+	else
+		ft_lstadd_front(stack, stack_top);
 	head = *stack;
 	*stack = (*stack)->next;
 	while (*stack)
@@ -57,6 +61,7 @@ void	pa(t_list **stack_a, t_list **stack_b)
 		return ;
 	stack_b_top = pop_and_rewrite(stack_b);
 	push_and_rewrite(stack_a, stack_b_top);
+	ft_putstr_fd("pa\n", 1);
 	return ;
 }
 
@@ -68,5 +73,6 @@ void	pb(t_list **stack_a, t_list **stack_b)
 		return ;
 	stack_a_top = pop_and_rewrite(stack_a);
 	push_and_rewrite(stack_b, stack_a_top);
+	ft_putstr_fd("pb\n", 1);
 	return ;
 }

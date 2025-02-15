@@ -6,30 +6,59 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:52 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/13 20:17:36 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/15 03:10:22 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 #include <stdio.h>
 
-static int	get_max_bit(int num)
+static int	get_max_bit(t_list *stack_a)
 {
 	int max_bit;
+	int	bit;
 
 	max_bit = 0;
-	while (num > 0)
+	while (stack_a)
 	{
-		num /= 2;
-		max_bit++;
+		bit = 0;
+		while (stack_a->num > 0)
+		{
+			stack_a->num /= 2;
+			bit++;
+		}
+		if (max_bit < bit)
+			max_bit = bit;
+		stack_a = stack_a->next;
 	}
 	return (max_bit);
 }
 
 void    radix_sort(t_list **stack_a, t_list **stack_b)
 {
-	while ()
-	{
+	int max_bit;
+	int	lst_size;
+	int	i;
+	int	j;
 
+	max_bit = get_max_bit(*stack_a);
+	lst_size = ft_lstsize(*stack_a);
+	i = 0;
+	while (i < max_bit)
+	{
+		j = 0;
+		while (j++ < lst_size)
+		{
+			if (((*stack_a)->num >> i) & 1)
+				ra(stack_a);
+			else
+				pb(stack_a, stack_b);
+		}
+		*stack_a = ft_lstfirst(*stack_a);
+		while (*stack_b)
+			pa(stack_a, stack_b);
+		*stack_b = ft_lstfirst(*stack_b);
+		i++;
 	}
+	return ;
 }

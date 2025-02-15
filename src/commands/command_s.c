@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:41 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/13 15:54:44 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/14 16:19:17 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	sa(t_list **stack_a)
 	tmp = (*stack_a)->num;
 	(*stack_a)->num = (*stack_a)->next->num;
 	(*stack_a)->next->num = tmp;
+	ft_putstr_fd("sa\n", 1);
 	return ;
 }
 
@@ -33,6 +34,7 @@ void	sb(t_list **stack_b)
 	tmp = (*stack_b)->num;
 	(*stack_b)->num = (*stack_b)->next->num;
 	(*stack_b)->next->num = tmp;
+	ft_putstr_fd("sb\n", 1);
 	return ;
 }
 
@@ -40,5 +42,6 @@ void	ss(t_list **stack_a, t_list **stack_b)
 {
 	sa (stack_a);
 	sb (stack_b);
+	ft_putstr_fd("ss\n", 1);
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:45 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/13 19:05:01 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/15 03:11:25 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int main (int argc, char const *argv[])
 	stack_a_cpy = stack_a;
 	stack_b= NULL;
 	stack_b_cpy = stack_b;
-	printf("before--------------------------------------------------------------\n");
 	printf("stack_a\n");
 	while (stack_a)
 	{
@@ -47,8 +46,8 @@ int main (int argc, char const *argv[])
 		printf("index:%d num:%d\n", stack_b->index, stack_b->num);
 		stack_b = stack_b->next;
 	}
+	compress(&stack_a_cpy);
 	radix_sort(&stack_a_cpy, &stack_b_cpy);
-	printf("after---------------------------------------------------------------\n");
 	printf("stack_a\n");
 	while (stack_a_cpy)
 	{
