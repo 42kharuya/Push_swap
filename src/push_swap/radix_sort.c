@@ -6,32 +6,34 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:52 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/15 03:10:22 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/15 18:02:15 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 #include <stdio.h>
 
-static int	get_max_bit(t_list *stack_a)
+static int get_max_bit(t_list *stack_a)
 {
-	int max_bit;
-	int	bit;
+    int max_bit;
+    int bit;
+    int temp_num;
 
-	max_bit = 0;
-	while (stack_a)
-	{
-		bit = 0;
-		while (stack_a->num > 0)
-		{
-			stack_a->num /= 2;
-			bit++;
-		}
-		if (max_bit < bit)
-			max_bit = bit;
-		stack_a = stack_a->next;
-	}
-	return (max_bit);
+    max_bit = 0;
+    while (stack_a)
+    {
+        bit = 0;
+        temp_num = stack_a->num;
+        while (temp_num > 0)
+        {
+            temp_num /= 2;
+            bit++;
+        }
+        if (max_bit < bit)
+            max_bit = bit;
+        stack_a = stack_a->next;
+    }
+    return (max_bit);
 }
 
 void    radix_sort(t_list **stack_a, t_list **stack_b)
