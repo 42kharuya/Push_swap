@@ -6,46 +6,61 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:40 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/16 16:42:08 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/17 19:33:10 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+#include <stdio.h>
 
-// "  43 43"などの場合にこれを整数として扱って良いのか問題
-static bool format_check(char const *str)
+static bool error_check(char const *arg)
 {
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	while (*str == '+' || *str == '-')
-		str++;
-	while (*str)
+	while (*arg == 32 || (*arg >= 9 && *arg <= 13))
+		arg++;
+	while (*arg == '+' || *arg == '-')
+		arg++;
+	while (*arg && *arg != 32 && (*arg < 9 || *arg > 13))
 	{
-		if (*str < 48 || *str > 57)
+		if (*arg < 48 || *arg > 57)
 			return (false);
-		str++;
+		arg++;
 	}
 	return (true);
 }
 
-t_list *make_stack_a(int index, char const *argv[])
+static t_list	*make_node(const char *arg)
+{
+	t_list	*node;
+
+	node = NULL;
+	while (*arg)
+	{
+		if (error_check(arg) == false)
+			return (NULL);
+		ft_lstadd_back(&node, ft_lstnew(ft_atoi(arg)));
+		while (*arg == 32 || (*arg >= 9 && *arg <= 13))
+			arg++;
+		while (*arg && *arg != 32 && (*arg < 9 || *arg > 13))
+			arg++;
+	}
+	return (node);
+}
+
+t_list *make_stack_a(int argc, char const *argv[])
 {
 	t_list	*a;
 	t_list	*new_node;
+	int		i;
 
-	if (format_check(argv[index]) == false)
-		return (NULL);
-	a = ft_lstnew(index, ft_atoi(argv[index]));
-	if (!a)
-		return (NULL);
-	while (--index > 0)
+	a = NULL;
+	i = 1;
+	while (i < argc)
 	{
-		if (format_check(argv[index]) == false)
-			return (NULL);
-		new_node = ft_lstnew(index, ft_atoi(argv[index]));
+		new_node = make_node(argv[i]);
 		if (!new_node)
 			return (NULL);
-		ft_lstadd_front(&a, new_node);
+		ft_lstadd_back(&a, new_node);
+		i++;
 	}
 	return (a);
 }

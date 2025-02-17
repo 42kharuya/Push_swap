@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:45 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/16 18:35:15 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/17 19:35:01 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ int main (int argc, char const *argv[])
 
 	if (argc <= 1)
 		return (1);
-	a = make_stack_a(--argc, argv);
+	a = make_stack_a(argc, argv);
 	if (!a)
 		return (ft_putstr_fd("Error\n", 1));
 	b = NULL;
 	sort_start(&a, &b, ft_lstsize(a));
 	return (free_stack(&a));
 }
-
 
 // int main (int argc, char const *argv[])
 // {

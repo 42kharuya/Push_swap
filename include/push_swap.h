@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:53:46 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/17 14:19:02 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/17 17:07:55 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_list
 	struct s_list	*pre;
 	struct s_list	*next;
 	int				num;
-	int				index;
 }				t_list;
 
 //commands
@@ -45,12 +44,13 @@ void	rrr(t_list **a, t_list **b);
 //libft
 int		ft_atoi(const char *str);
 int		ft_putstr_fd(char *s, int fd);
-t_list	*ft_lstnew(int index, int num);
+t_list	*ft_lstnew(int num);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 t_list	*ft_lstfirst(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 //push_swap
 t_list *make_stack_a(int argc, char const *argv[]);
