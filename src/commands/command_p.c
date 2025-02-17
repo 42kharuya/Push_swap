@@ -6,16 +6,17 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:19 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/15 19:32:05 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/16 18:47:13 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-#include <stdio.h>
 
 //コマンドの返り値をvoid型にしてしまうとmallocの割り当て失敗時のエラー処理などが実装できない。
 static void	push_and_rewrite(t_list **stack, t_list *stack_top)
 {
+	t_list	*head;
+
 	if (!(*stack))
 	{
 		*stack = ft_lstnew(1, stack_top->num);
@@ -23,13 +24,14 @@ static void	push_and_rewrite(t_list **stack, t_list *stack_top)
 	}
 	else
 		ft_lstadd_front(stack, stack_top);
+	head = *stack;
 	*stack = (*stack)->next;
 	while (*stack)
 	{
 		(*stack)->index = (*stack)->index + 1;
 		*stack = (*stack)->next;
 	}
-	*stack = ft_lstfirst(*stack);
+	*stack = head;
 	return ;
 }
 
@@ -53,26 +55,26 @@ static t_list	*pop_and_rewrite(t_list **stack)
 	return (stack_top);
 }
 
-void	pa(t_list **stack_a, t_list **stack_b)
+void	pa(t_list **a, t_list **b)
 {
-	t_list	*stack_b_top;
+	t_list	*b_top;
 
-	if (!(*stack_b))
+	if (!(*b))
 		return ;
-	stack_b_top = pop_and_rewrite(stack_b);
-	push_and_rewrite(stack_a, stack_b_top);
+	b_top = pop_and_rewrite(b);
+	push_and_rewrite(a, b_top);
 	ft_putstr_fd("pa\n", 1);
 	return ;
 }
 
-void	pb(t_list **stack_a, t_list **stack_b)
+void	pb(t_list **a, t_list **b)
 {
-	t_list	*stack_a_top;
+	t_list	*a_top;
 
-	if (!(*stack_a))
+	if (!(*a))
 		return ;
-	stack_a_top = pop_and_rewrite(stack_a);
-	push_and_rewrite(stack_b, stack_a_top);
+	a_top = pop_and_rewrite(a);
+	push_and_rewrite(b, a_top);
 	ft_putstr_fd("pb\n", 1);
 	return ;
 }

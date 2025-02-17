@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:40 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/13 15:55:42 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/16 16:42:08 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ static bool format_check(char const *str)
 
 t_list *make_stack_a(int index, char const *argv[])
 {
-	t_list	*stack_a;
+	t_list	*a;
 	t_list	*new_node;
 
 	if (format_check(argv[index]) == false)
 		return (NULL);
-	stack_a = ft_lstnew(index, ft_atoi(argv[index]));
-	if (!stack_a)
+	a = ft_lstnew(index, ft_atoi(argv[index]));
+	if (!a)
 		return (NULL);
 	while (--index > 0)
 	{
@@ -45,7 +45,7 @@ t_list *make_stack_a(int index, char const *argv[])
 		new_node = ft_lstnew(index, ft_atoi(argv[index]));
 		if (!new_node)
 			return (NULL);
-		ft_lstadd_front(&stack_a, new_node);
+		ft_lstadd_front(&a, new_node);
 	}
-	return (stack_a);
+	return (a);
 }

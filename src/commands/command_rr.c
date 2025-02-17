@@ -6,48 +6,52 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:35 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/14 16:18:54 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/16 19:22:16 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	rra(t_list **stack_a)
+void	rra(t_list **a)
 {
-	int	last_index_num;
+	int		last_index_num;
+	t_list	*head;
 
-	*stack_a = ft_lstlast(*stack_a);
-	last_index_num = (*stack_a)->num;
-	while ((*stack_a)->pre)
+	head = *a;
+	while ((*a)->next)
 	{
-		(*stack_a)->num = (*stack_a)->pre->num;
-		*stack_a = (*stack_a)->pre;
+		(*a)->next->num = (*a)->num;
+		*a = (*a)->next;
 	}
-	(*stack_a)->num = last_index_num;
+	last_index_num = (*a)->num;
+	*a = head;
+	(*a)->num = last_index_num;
 	ft_putstr_fd("rra\n", 1);
 	return ;
 }
 
-void	rrb(t_list **stack_b)
+void	rrb(t_list **b)
 {
-	int	last_index_num;
+	int		last_index_num;
+	t_list	*head;
 
-	*stack_b = ft_lstlast(*stack_b);
-	last_index_num = (*stack_b)->num;
-	while ((*stack_b)->pre)
+	head = *b;
+	while ((*b)->next)
 	{
-		(*stack_b)->num = (*stack_b)->pre->num;
-		*stack_b = (*stack_b)->pre;
+		(*b)->next->num = (*b)->num;
+		*b = (*b)->next;
 	}
-	(*stack_b)->num = last_index_num;
+	last_index_num = (*b)->num;
+	*b = head;
+	(*b)->num = last_index_num;
 	ft_putstr_fd("rrb\n", 1);
 	return ;
 }
 
-void	rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_list **a, t_list **b)
 {
-	rra(stack_a);
-	rrb(stack_b);
+	rra(a);
+	rrb(b);
 	ft_putstr_fd("rrr\n", 1);
 	return ;
 }

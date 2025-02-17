@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 15:55:26 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/16 17:00:24 by kharuya          ###   ########.fr       */
+/*   Created: 2025/02/16 16:55:26 by kharuya           #+#    #+#             */
+/*   Updated: 2025/02/16 16:55:57 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int	ft_putstr_fd(char *s, int fd)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	error_check;
+	size_t	i;
 
-	error_check = 0;
-	if (!s)
+	i = 0;
+	if (n == 0 || (!s1 && !s2))
 		return (0);
-	if (ft_strncmp(s, "Error\n", sizeof(s)) == 0)
-		error_check = 1;
-	while (*s)
-		write(fd, &*(s++), 1);
-	return(error_check);
+	while ((s1[i] || s2[i]) && n-- > 0)
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
 }

@@ -6,42 +6,42 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:41 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/14 16:19:17 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/16 16:38:27 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	sa(t_list **stack_a)
+void	sa(t_list **a)
 {
 	int	tmp;
 
-	if (*stack_a == NULL || (*stack_a)->next == NULL)
+	if (*a == NULL || (*a)->next == NULL)
 		return ;
-	tmp = (*stack_a)->num;
-	(*stack_a)->num = (*stack_a)->next->num;
-	(*stack_a)->next->num = tmp;
+	tmp = (*a)->num;
+	(*a)->num = (*a)->next->num;
+	(*a)->next->num = tmp;
 	ft_putstr_fd("sa\n", 1);
 	return ;
 }
 
-void	sb(t_list **stack_b)
+void	sb(t_list **b)
 {
 	int	tmp;
 
-	if (*stack_b == NULL || (*stack_b)->next == NULL)
+	if (*b == NULL || (*b)->next == NULL)
 		return ;
-	tmp = (*stack_b)->num;
-	(*stack_b)->num = (*stack_b)->next->num;
-	(*stack_b)->next->num = tmp;
+	tmp = (*b)->num;
+	(*b)->num = (*b)->next->num;
+	(*b)->next->num = tmp;
 	ft_putstr_fd("sb\n", 1);
 	return ;
 }
 
-void	ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **a, t_list **b)
 {
-	sa (stack_a);
-	sb (stack_b);
+	sa (a);
+	sb (b);
 	ft_putstr_fd("ss\n", 1);
 	return ;
 }
