@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:45 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/18 16:24:21 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/19 16:32:37 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int main (int argc, char const *argv[])
 {
 	t_list	*a;
 	t_list	*b;
-	bool	error_check;
 
 	if (argc <= 1)
 		return (1);
-	error_check = true;
-	a = make_stack_a(argc, argv, &error_check);
-	if (!a)
+	if (format_check(argv) == false)
+		return (ft_putstr_fd("Error\n", 2));
+	a = make_stack_a(argc, argv);
+	if (!a || same_num_check(a) == false)
 		return (ft_putstr_fd("Error\n", 2));
 	b = NULL;
 	sort_start(&a, &b, ft_lstsize(a));
