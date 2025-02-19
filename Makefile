@@ -16,7 +16,9 @@ SRCS				=	$(LIBFT_FORDER)/ft_atoi.c $(LIBFT_FORDER)/ft_lstnew.c \
 							$(PUSH_SWAP_FORDER)/compress.c $(PUSH_SWAP_FORDER)/radix_sort.c\
 							$(PUSH_SWAP_FORDER)/free_stack.c $(PUSH_SWAP_FORDER)/sort_start.c\
 							$(PUSH_SWAP_FORDER)/swap_smallest.c $(PUSH_SWAP_FORDER)/format_check.c\
-							$(PUSH_SWAP_FORDER)/same_num_check.c $(PUSH_SWAP_FORDER)/lst_into_array.c
+							$(PUSH_SWAP_FORDER)/same_num_check.c $(PUSH_SWAP_FORDER)/lst_into_array.c\
+							$(PUSH_SWAP_FORDER)/sort_2.c $(PUSH_SWAP_FORDER)/sort_3.c $(PUSH_SWAP_FORDER)/sort_4.c\
+							$(PUSH_SWAP_FORDER)/sort_5to20.c $(PUSH_SWAP_FORDER)/sort_x.c\
 OBJS				= 	$(SRCS:.c=.o)
 RM					= 	rm -f
 %.o:%.c
