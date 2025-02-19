@@ -6,29 +6,35 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:49 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/13 15:54:52 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/18 17:10:05 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-static long	ft_overflow(const char *str, long ans, int sign)
+static int	ft_overflow(const char *str, int ans, int sign, bool *error_check)
 {
 	int	digit;
 
 	digit = *str - 48;
-	if (sign == 1 && (LONG_MAX - (long)digit) / 10 < ans)
-		return (LONG_MAX);
-	if (sign == -1 && (LONG_MIN + (long)digit) / 10 > -ans)
-		return (LONG_MIN);
+	if (sign == 1 && (INT_MAX - digit) / 10 < ans)
+	{
+		*error_check = false;
+		return (INT_MAX);
+	}
+	if (sign == -1 && (INT_MIN + digit) / 10 > -ans)
+	{
+		*error_check = false;
+		return (INT_MIN);
+	}
 	else
 		return (1);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, bool *error_check)
 {
 	int		sign;
-	long	ans;
+	int		ans;
 	int		check_overflow;
 
 	sign = 1;
@@ -44,7 +50,7 @@ int	ft_atoi(const char *str)
 	ans = 0;
 	while (*str >= '0' && *str <= '9')
 	{
-		check_overflow = ft_overflow(str, ans, sign);
+		check_overflow = ft_overflow(str, ans, sign, error_check);
 		if (check_overflow != 1)
 			return (check_overflow);
 		ans = (ans * 10) + (*str - 48);

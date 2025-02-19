@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 16:44:46 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/16 17:16:38 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/18 16:39:39 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	free_stack(t_list **stack)
 {
 	t_list	*tmp;
 
+	if (!*stack)
+		return (0);
 	while (*stack)
 	{
 		tmp = (*stack)->next;
