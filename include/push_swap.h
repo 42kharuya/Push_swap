@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:53:46 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/19 16:29:31 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/19 18:22:11 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ void	compress(t_list **a);
 void    radix_sort(t_list **a, t_list **b);
 int		free_stack(t_list **stack);
 void	sort_start(t_list **a, t_list **b, int lst_size);
+void	sort_2(t_list **a);
+void	sort_3(t_list **a);
+void	sort_4(t_list **a, t_list **b);
+void sort_5to20(t_list **a, t_list **b);
+void	sort_morethan_20(t_list **a, t_list **b);
 void	swap_smallest(t_list **a, t_list **b);
 bool	format_check(char const *argv[]);
 bool	same_num_check(t_list *a);
