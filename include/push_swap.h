@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:53:46 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/19 18:22:11 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/19 22:36:29 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,9 @@ void	swap_smallest(t_list **a, t_list **b);
 bool	format_check(char const *argv[]);
 bool	same_num_check(t_list *a);
 int		*lst_into_array(t_list *a);
+int		get_min_num(t_list *stack);
+int		get_max_num(t_list *stack);
+void	turk_step_1(t_list **a, t_list **b);
+void	turk_step_2(t_list **a, t_list **b);
 
 #endif
