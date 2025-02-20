@@ -11,3 +11,19 @@
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+void calc_operation(t_list **a, t_list **b)
+{
+	t_list		*head;
+	t_command	command;
+	int			min_operation;
+
+	while ()
+	{
+		head = *a;
+		while (1)
+		{
+			
+		}
+	}
+}

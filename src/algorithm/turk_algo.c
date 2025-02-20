@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 20:17:18 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/19 22:40:21 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/20 14:44:43 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static int get_near_more_num(t_list *a, int b_num)
 
 void turk_step_1(t_list **a, t_list **b)
 {
-
+	*a = calc_operation();
 	while (ft_lstsize(*a) <= 3)
 	{
 		if ((*a)->num >= get_max_num(*b) || (*a)->num <= get_min_num(*b))
@@ -97,18 +97,21 @@ void turk_step_1(t_list **a, t_list **b)
 
 void	turk_step_2(t_list **a, t_list **b)
 {
-	if ((*b)->num >= get_max_num(*a) || (*b)->num <= get_min_num(*a))
+	while (*b)
 	{
-		while ((*a)->num != get_min_num(*a))
-			ra(a);
-		pa(a, b);
-		if ((*b)->num != get_min_num(*b))
-			ra(a);
-	}
-	else
-	{
-		while ((*a)->num != get_near_more_num(*a, (*b)->num))
-				rb(b);
-		pa(a,b);
+		if ((*b)->num >= get_max_num(*a) || (*b)->num <= get_min_num(*a))
+		{
+			while ((*a)->num != get_min_num(*a))
+				ra(a);
+			pa(a, b);
+			if ((*b)->num != get_min_num(*b))
+				ra(a);
+		}
+		else
+		{
+			while ((*a)->num != get_near_more_num(*a, (*b)->num))
+					rb(b);
+			pa(a,b);
+		}
 	}
 }
