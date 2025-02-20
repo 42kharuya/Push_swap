@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:53:46 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/20 15:32:45 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/20 19:34:35 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@
 # include <stdbool.h>
 
 //struct
-typedef struct s_list
-{
-	struct s_list	*pre;
-	struct s_list	*next;
-	t_command		command;
-	int				num;
-}				t_list;
 
 typedef struct s_command
 {
@@ -38,7 +31,15 @@ typedef struct s_command
 	int		rrb;
 	int		rr;
 	int		rrr;
-}	t_command;
+}				t_command;
+
+typedef struct s_list
+{
+	struct s_list	*pre;
+	struct s_list	*next;
+	t_command		command;
+	int				num;
+}				t_list;
 
 //commands
 void	sa(t_list **a);
@@ -83,7 +84,13 @@ int			get_min_num(t_list *stack);
 int			get_max_num(t_list *stack);
 void		turk_step_1(t_list **a, t_list **b);
 void		turk_step_2(t_list **a, t_list **b);
-t_list 		*calc_operation(t_list **a, t_list **b);
+void		calc_operations(t_list **from, t_list *to, int (*get_num)(t_list *stack, int _num));
 t_command	command_init(void);
+int			get_near_less_num(t_list *b, int a_num);
+int			get_near_more_num(t_list *a, int b_num);
+int			get_near_num(t_list *stack, int num, int (*get_near_num)(t_list *stack, int _num));
+int			get_index(t_list *stack, int num);
+void		serch_least_operaion(t_list **stack);
+void		command_reset(t_list **stack);
 
 #endif

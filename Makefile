@@ -20,7 +20,9 @@ SRCS				=	src/main.c \
 							$(UTILS_FORDER)/calc_operations.c $(UTILS_FORDER)/compress.c \
 							$(UTILS_FORDER)/error_check.c $(UTILS_FORDER)/free_stack.c \
 							$(UTILS_FORDER)/lst_into_array.c $(UTILS_FORDER)/make_stack_a.c \
-							$(UTILS_FORDER)/swap_smallest.c $(UTILS_FORDER)/get_extream_num.c
+							$(UTILS_FORDER)/swap_smallest.c $(UTILS_FORDER)/get_extream_num.c\
+							$(UTILS_FORDER)/command_init.c $(UTILS_FORDER)/get_near_num.c \
+							$(UTILS_FORDER)/get_index.c
 OBJS				= 	$(SRCS:.c=.o)
 RM					= 	rm -f
 %.o:%.c
