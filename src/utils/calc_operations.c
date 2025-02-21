@@ -11,6 +11,32 @@
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+#include <stdio.h>
+
+//明日の予定→rrrやrrの実装をする
+static void change_to_rr_rrr(t_list **from)
+{
+	while ((*from)->command.ra && (*from)->command.rb)
+	{
+		(*from)->command.rr++;
+		(*from)->command.ra--;
+		(*from)->command.rb--;
+	}
+	while ((*from)->command.rra && (*from)->command.rrb)
+	{
+		(*from)->command.rrr++;
+		(*from)->command.rra--;
+		(*from)->command.rrb--;
+	}
+	return ;
+}
+
+static void calc_command_all(t_list **from)
+{
+	(*from)->command.all = (*from)->command.ra + (*from)->command.rb + (*from)->command.rr \
+	+ (*from)->command.rra + (*from)->command.rrb + (*from)->command.rrr;
+	return ;
+}
 
 static void count_b_rotate(t_list **from, t_list *to, int (*get_num)(t_list *stack, int _num))
 {
@@ -58,31 +84,6 @@ static void count_a_rotate(t_list **from, t_list *to, int (*get_num)(t_list *sta
 		index++;
 	}
 	*from = head;
-	return ;
-}
-
-
-static void change_to_rr_rrr(t_list **from)
-{
-	while ((*from)->command.ra && (*from)->command.rb)
-	{
-		(*from)->command.rr++;
-		(*from)->command.ra--;
-		(*from)->command.rb--;
-	}
-	while ((*from)->command.rra && (*from)->command.rrb)
-	{
-		(*from)->command.rrr++;
-		(*from)->command.rra--;
-		(*from)->command.rrb--;
-	}
-	return ;
-}
-
-static void calc_command_all(t_list **from)
-{
-	(*from)->command.all = (*from)->command.ra + (*from)->command.rb + (*from)->command.rr \
-	+ (*from)->command.rra + (*from)->command.rrb + (*from)->command.rrr;
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:53:46 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/20 19:34:35 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/21 17:36:43 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ int			get_near_less_num(t_list *b, int a_num);
 int			get_near_more_num(t_list *a, int b_num);
 int			get_near_num(t_list *stack, int num, int (*get_near_num)(t_list *stack, int _num));
 int			get_index(t_list *stack, int num);
-void		serch_least_operaion(t_list **stack);
-void		command_reset(t_list **stack);
+void		command_reset_lst(t_list **stack);
 
 #endif
