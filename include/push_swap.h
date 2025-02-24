@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:53:46 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/21 17:36:43 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/24 17:11:37 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,13 @@ int			get_min_num(t_list *stack);
 int			get_max_num(t_list *stack);
 void		turk_step_1(t_list **a, t_list **b);
 void		turk_step_2(t_list **a, t_list **b);
-void		calc_operations(t_list **from, t_list *to, int (*get_num)(t_list *stack, int _num));
 t_command	command_init(void);
 int			get_near_less_num(t_list *b, int a_num);
 int			get_near_more_num(t_list *a, int b_num);
 int			get_near_num(t_list *stack, int num, int (*get_near_num)(t_list *stack, int _num));
 int			get_index(t_list *stack, int num);
 void		command_reset_lst(t_list **stack);
+void		calc_operations_step1(t_list **a, t_list *b);
+void		calc_operations_step2(t_list *a, t_list **b);
 
 #endif

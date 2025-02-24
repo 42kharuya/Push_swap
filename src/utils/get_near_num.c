@@ -20,7 +20,7 @@ int get_near_less_num(t_list *b, int a_num)
 	b = head;
 	while (b)
 	{
-		if (a_num - b->num < diff)
+		if (b->num < a_num && a_num - b->num < diff)
 		{
 			diff = a_num - b->num;
 			near_less_num = b->num;
@@ -50,7 +50,7 @@ int get_near_more_num(t_list *a, int b_num)
 	a = head;
 	while (a)
 	{
-		if (a->num - b_num < diff)
+		if (a->num > b_num && a->num - b_num < diff)
 		{
 			diff = a->num - b_num;
 			near_more_num = a->num;

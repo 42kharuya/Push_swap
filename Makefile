@@ -17,12 +17,12 @@ SRCS				=	src/main.c \
 							$(ALGORITHM_FORDER)/radix_algo.c $(ALGORITHM_FORDER)/sort_2to4.c \
 							$(ALGORITHM_FORDER)/sort_5to20.c $(ALGORITHM_FORDER)/sort_morethan_20.c \
 							$(ALGORITHM_FORDER)/sort.c $(ALGORITHM_FORDER)/turk_algo.c \
-							$(UTILS_FORDER)/calc_operations.c $(UTILS_FORDER)/compress.c \
-							$(UTILS_FORDER)/error_check.c $(UTILS_FORDER)/free_stack.c \
-							$(UTILS_FORDER)/lst_into_array.c $(UTILS_FORDER)/make_stack_a.c \
-							$(UTILS_FORDER)/swap_smallest.c $(UTILS_FORDER)/get_extream_num.c\
-							$(UTILS_FORDER)/command_init.c $(UTILS_FORDER)/get_near_num.c \
-							$(UTILS_FORDER)/get_index.c
+							$(UTILS_FORDER)/calc_operations_step1.c $(UTILS_FORDER)/calc_operations_step2.c \
+							$(UTILS_FORDER)/compress.c $(UTILS_FORDER)/error_check.c \
+							$(UTILS_FORDER)/free_stack.c $(UTILS_FORDER)/lst_into_array.c \
+							$(UTILS_FORDER)/make_stack_a.c $(UTILS_FORDER)/swap_smallest.c \
+							$(UTILS_FORDER)/get_extream_num.c $(UTILS_FORDER)/command_init.c \
+							$(UTILS_FORDER)/get_near_num.c $(UTILS_FORDER)/get_index.c
 OBJS				= 	$(SRCS:.c=.o)
 RM					= 	rm -f
 %.o:%.c
@@ -32,6 +32,9 @@ $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(INC) $(OBJS) -o $(NAME)
 
 all: $(NAME)
+
+fsanitize:
+	$(CC) $(FLAGS) -g -fsanitize=leak $(INC) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)

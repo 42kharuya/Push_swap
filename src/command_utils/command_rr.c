@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:35 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/16 19:22:16 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/23 20:30:06 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 void	rra(t_list **a)
 {
 	int		last_index_num;
-	t_list	*head;
 
-	head = *a;
-	while ((*a)->next)
-	{
-		(*a)->next->num = (*a)->num;
-		*a = (*a)->next;
-	}
+	*a = ft_lstlast(*a);
 	last_index_num = (*a)->num;
-	*a = head;
+	while ((*a)->pre != NULL)
+	{
+		(*a)->num = (*a)->pre->num;
+		*a = (*a)->pre;
+	}
 	(*a)->num = last_index_num;
 	ft_putstr_fd("rra\n", 1);
 	return ;
@@ -33,16 +31,14 @@ void	rra(t_list **a)
 void	rrb(t_list **b)
 {
 	int		last_index_num;
-	t_list	*head;
 
-	head = *b;
-	while ((*b)->next)
-	{
-		(*b)->next->num = (*b)->num;
-		*b = (*b)->next;
-	}
+	*b = ft_lstlast(*b);
 	last_index_num = (*b)->num;
-	*b = head;
+	while ((*b)->pre != NULL)
+	{
+		(*b)->num = (*b)->pre->num;
+		*b = (*b)->pre;
+	}
 	(*b)->num = last_index_num;
 	ft_putstr_fd("rrb\n", 1);
 	return ;
