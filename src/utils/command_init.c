@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:35:54 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 19:29:09 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 20:28:23 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	command_reset_lst(t_list **a, t_list **b)
 	a_head = *a;
 	while (*a)
 	{
-		command_init(*a);
+		command_init(a);
 		*a = (*a)->next;
 	}
 	*a = a_head;
 	b_head = *b;
 	while (*b)
 	{
-		command_init(*b);
+		command_init(b);
 		*b = (*b)->next;
 	}
 	*b = b_head;

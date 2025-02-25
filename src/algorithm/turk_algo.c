@@ -6,14 +6,12 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 20:17:18 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 19:21:39 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 22:15:23 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 #include <stdio.h>
-
-//上記２つの条件を満たすコマンド数が一番少なくて済むAを選択してプッシュする
 
 static t_command	get_least_operations(t_list *stack)
 {

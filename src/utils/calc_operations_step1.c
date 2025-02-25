@@ -6,14 +6,13 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 21:03:01 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 19:16:10 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 22:15:33 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 #include <stdio.h>
 
-//明日の予定→rrrやrrの実装をする
 static void	change_to_rr_rrr(t_list **a)
 {
 	t_list	*head;

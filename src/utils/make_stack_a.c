@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:40 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 19:18:51 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 21:14:50 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 static t_list	*make_node(const char *arg)
 {
 	t_list	*node;
+	t_list	*new;
 	int		num;
 	bool	atoi_error;
 
@@ -25,11 +26,11 @@ static t_list	*make_node(const char *arg)
 	{
 		num = ft_atoi(arg, &atoi_error);
 		if (atoi_error == false)
-		{
-			free_stack(&node);
-			return (NULL);
-		}
-		ft_lstadd_back(&node, ft_lstnew(num));
+			return (free_stack(&node), NULL);
+		new = ft_lstnew(num);
+		if (!new)
+			return (free_stack(&node), NULL);
+		ft_lstadd_back(&node, new);
 		while (*arg == 32 || (*arg >= 9 && *arg <= 13))
 			arg++;
 		while (*arg && *arg != 32 && (*arg < 9 || *arg > 13))

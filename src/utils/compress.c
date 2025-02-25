@@ -6,14 +6,13 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:34 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 19:09:10 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 22:15:40 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
 //mallocのエラー処理問題
-
 static int	*bubble_sort(int *array, int lst_size)
 {
 	int	i;

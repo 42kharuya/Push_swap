@@ -6,14 +6,13 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:19 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 03:06:01 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 22:15:30 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 #include <stdio.h>
 
-//コマンドの返り値をvoid型にしてしまうとmallocの割り当て失敗時のエラー処理などが実装できない。
 static void	push_and_rewrite(t_list **stack, t_list *stack_top)
 {
 	if (!(*stack))
