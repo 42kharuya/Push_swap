@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_operations.c                                   :+:      :+:    :+:   */
+/*   calc_operations_step2.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 20:16:51 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/19 20:16:52 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 19:16:47 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 #include <stdio.h>
 
-static void change_to_rr_rrr(t_list **b)
+static void	change_to_rr_rrr(t_list **b)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = *b;
 	while (*b)
@@ -38,22 +38,23 @@ static void change_to_rr_rrr(t_list **b)
 	return ;
 }
 
-static void calc_command_all(t_list **b)
+static void	calc_command_all(t_list **b)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = *b;
 	while (*b)
 	{
-		(*b)->command.all = (*b)->command.ra + (*b)->command.rb + (*b)->command.rr \
-		+ (*b)->command.rra + (*b)->command.rrb + (*b)->command.rrr;
+		(*b)->command.all = (*b)->command.ra + (*b)->command.rb \
+		+ (*b)->command.rr + (*b)->command.rra + (*b)->command.rrb \
+		+ (*b)->command.rrr;
 		*b = (*b)->next;
 	}
 	*b = head;
 	return ;
 }
 
-static void count_a_rotate(t_list *a, t_list **b)
+static void	count_a_rotate(t_list *a, t_list **b)
 {
 	int		index;
 	int		last_index;
@@ -74,8 +75,7 @@ static void count_a_rotate(t_list *a, t_list **b)
 	return ;
 }
 
-
-static void count_b_rotate(t_list *a, t_list **b)
+static void	count_b_rotate(t_list *a, t_list **b)
 {
 	t_list		*head;
 	int			last_index;
@@ -102,7 +102,7 @@ static void count_b_rotate(t_list *a, t_list **b)
 	return ;
 }
 
-void calc_operations_step2(t_list *a, t_list **b)
+void	calc_operations_step2(t_list *a, t_list **b)
 {
 	count_b_rotate(a, b);
 	change_to_rr_rrr(b);

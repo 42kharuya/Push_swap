@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:34 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/19 16:32:57 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 19:09:10 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 static int	*bubble_sort(int *array, int lst_size)
 {
-	int i;
-	int tmp;
+	int	i;
+	int	tmp;
 
 	while (lst_size > 1)
 	{
@@ -51,7 +51,7 @@ static void	value_mapping(t_list **a, int *array, int lst_size)
 			if ((*a)->num == array[i])
 			{
 				(*a)->num = i;
-				break;
+				break ;
 			}
 			i++;
 		}

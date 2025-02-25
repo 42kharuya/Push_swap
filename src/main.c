@@ -6,14 +6,14 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:45 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/24 17:11:33 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 18:26:27 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-int main (int argc, char const *argv[])
+int	main(int argc, char const *argv[])
 {
 	t_list	*a;
 	t_list	*b;

@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 18:10:53 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/16 18:49:45 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 18:27:45 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	swap_smallest(t_list **a, t_list **b)
 {
 	t_list	*head;
-	int 	smallest_num;
+	int		smallest_num;
 
 	head = *a;
 	smallest_num = (*a)->num;

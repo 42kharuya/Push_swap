@@ -1,13 +1,11 @@
 #include "../../include/push_swap.h"
 
-int get_near_less_num(t_list *b, int a_num)
+int	get_near_less_num(t_list *b, int a_num)
 {
 	int		diff;
 	int		near_less_num;
-	t_list	*head;
 
-	head = b;
-	while(b)
+	while (b)
 	{
 		if (b->num < a_num)
 		{
@@ -17,7 +15,7 @@ int get_near_less_num(t_list *b, int a_num)
 		}
 		b = b->next;
 	}
-	b = head;
+	b = ft_lstfirst(b);
 	while (b)
 	{
 		if (b->num < a_num && a_num - b->num < diff)
@@ -30,14 +28,12 @@ int get_near_less_num(t_list *b, int a_num)
 	return (near_less_num);
 }
 
-int get_near_more_num(t_list *a, int b_num)
+int	get_near_more_num(t_list *a, int b_num)
 {
 	int		diff;
 	int		near_more_num;
-	t_list	*head;
 
-	head = a;
-	while(a)
+	while (a)
 	{
 		if (a->num > b_num)
 		{
@@ -47,7 +43,7 @@ int get_near_more_num(t_list *a, int b_num)
 		}
 		a = a->next;
 	}
-	a = head;
+	a = ft_lstfirst(a);
 	while (a)
 	{
 		if (a->num > b_num && a->num - b_num < diff)

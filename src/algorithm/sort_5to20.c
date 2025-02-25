@@ -6,13 +6,13 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:06:32 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/23 20:19:19 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 19:22:46 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void sort_5to20(t_list **a, t_list **b)
+void	sort_5to20(t_list **a, t_list **b)
 {
 	pb(a, b);
 	pb(a, b);

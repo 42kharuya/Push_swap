@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 21:03:01 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 02:59:31 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 19:16:10 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <stdio.h>
 
 //明日の予定→rrrやrrの実装をする
-static void change_to_rr_rrr(t_list **a)
+static void	change_to_rr_rrr(t_list **a)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = *a;
 	while (*a)
@@ -39,22 +39,23 @@ static void change_to_rr_rrr(t_list **a)
 	return ;
 }
 
-static void calc_command_all(t_list **a)
+static void	calc_command_all(t_list **a)
 {
-	t_list *head;
+	t_list	*head;
 
 	head = *a;
 	while (*a)
 	{
-		(*a)->command.all = (*a)->command.ra + (*a)->command.rb + (*a)->command.rr \
-		+ (*a)->command.rra + (*a)->command.rrb + (*a)->command.rrr;
+		(*a)->command.all = (*a)->command.ra + (*a)->command.rb \
+		+ (*a)->command.rr + (*a)->command.rra + (*a)->command.rrb \
+		+ (*a)->command.rrr;
 		*a = (*a)->next;
 	}
 	*a = head;
 	return ;
 }
 
-static void count_b_rotate(t_list **a, t_list *b)
+static void	count_b_rotate(t_list **a, t_list *b)
 {
 	int		index;
 	int		last_index;
@@ -75,8 +76,7 @@ static void count_b_rotate(t_list **a, t_list *b)
 	return ;
 }
 
-
-static void count_a_rotate(t_list **a, t_list *b)
+static void	count_a_rotate(t_list **a, t_list *b)
 {
 	t_list		*head;
 	int			last_index;
@@ -103,7 +103,7 @@ static void count_a_rotate(t_list **a, t_list *b)
 	return ;
 }
 
-void calc_operations_step1(t_list **a, t_list *b)
+void	calc_operations_step1(t_list **a, t_list *b)
 {
 	count_a_rotate(a, b);
 	change_to_rr_rrr(a);

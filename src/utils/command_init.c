@@ -6,43 +6,42 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:35:54 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/21 17:52:26 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 19:29:09 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-t_command	command_init(void)
+void	command_init(t_list **stack)
 {
-	t_command command;
-
-	command.all = 0;
-	command.ra = 0;
-	command.rb = 0;
-	command.rr = 0;
-	command.rra = 0;
-	command.rrb = 0;
-	command.rrr = 0;
-
-	return (command);
+	(*stack)->command.all = 0;
+	(*stack)->command.ra = 0;
+	(*stack)->command.rb = 0;
+	(*stack)->command.rr = 0;
+	(*stack)->command.rra = 0;
+	(*stack)->command.rrb = 0;
+	(*stack)->command.rrr = 0;
+	return ;
 }
 
-void	command_reset_lst(t_list **stack)
+void	command_reset_lst(t_list **a, t_list **b)
 {
-	t_list *head;
+	t_list	*a_head;
+	t_list	*b_head;
 
-	head = *stack;
-	while (*stack)
+	a_head = *a;
+	while (*a)
 	{
-		(*stack)->command.all = 0;
-		(*stack)->command.ra = 0;
-		(*stack)->command.rb = 0;
-		(*stack)->command.rr = 0;
-		(*stack)->command.rra = 0;
-		(*stack)->command.rrb = 0;
-		(*stack)->command.rrr = 0;
-		*stack = (*stack)->next;
+		command_init(*a);
+		*a = (*a)->next;
 	}
-	*stack = head;
+	*a = a_head;
+	b_head = *b;
+	while (*b)
+	{
+		command_init(*b);
+		*b = (*b)->next;
+	}
+	*b = b_head;
 	return ;
 }

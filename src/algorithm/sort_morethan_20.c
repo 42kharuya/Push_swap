@@ -6,14 +6,15 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:06:36 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/19 18:19:56 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 19:30:44 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void sort_morethan_20(t_list **a, t_list **b)
+void	sort_morethan_20(t_list **a, t_list **b)
 {
 	compress(a);
-	radix_sort(a,b);
+	radix_sort(a, b);
+	return ;
 }

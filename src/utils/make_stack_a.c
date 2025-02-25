@@ -6,14 +6,14 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:40 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/23 20:18:36 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 19:18:51 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 #include <stdio.h>
 
-static t_list *make_node(const char *arg)
+static t_list	*make_node(const char *arg)
 {
 	t_list	*node;
 	int		num;
@@ -38,7 +38,7 @@ static t_list *make_node(const char *arg)
 	return (node);
 }
 
-t_list *make_stack_a(int argc, char const *argv[])
+t_list	*make_stack_a(int argc, char const *argv[])
 {
 	t_list	*a;
 	t_list	*new_node;
