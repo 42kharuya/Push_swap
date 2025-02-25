@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:19 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/23 20:27:48 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 03:06:01 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	push_and_rewrite(t_list **stack, t_list *stack_top)
 {
 	if (!(*stack))
 	{
-		*stack = ft_lstnew(stack_top->num);
+		*stack = stack_top;
 		return ;
 	}
 	else

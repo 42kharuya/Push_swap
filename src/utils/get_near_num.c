@@ -59,8 +59,3 @@ int get_near_more_num(t_list *a, int b_num)
 	}
 	return (near_more_num);
 }
-
-int get_near_num(t_list *stack, int num, int (*get_near_num)(t_list *stack, int _num))
-{
-	return (get_near_num(stack, num));
-}

@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 21:03:01 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/22 21:09:41 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/25 02:59:31 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,41 @@
 //明日の予定→rrrやrrの実装をする
 static void change_to_rr_rrr(t_list **a)
 {
-	while ((*a)->command.ra && (*a)->command.rb > 0)
+	t_list *head;
+
+	head = *a;
+	while (*a)
 	{
-		(*a)->command.rr++;
-		(*a)->command.ra--;
-		(*a)->command.rb--;
+		while ((*a)->command.ra > 0 && (*a)->command.rb > 0)
+		{
+			(*a)->command.rr++;
+			(*a)->command.ra--;
+			(*a)->command.rb--;
+		}
+		while ((*a)->command.rra > 0 && (*a)->command.rrb > 0)
+		{
+			(*a)->command.rrr++;
+			(*a)->command.rra--;
+			(*a)->command.rrb--;
+		}
+		*a = (*a)->next;
 	}
-	while ((*a)->command.rra > 0 && (*a)->command.rrb > 0)
-	{
-		(*a)->command.rrr++;
-		(*a)->command.rra--;
-		(*a)->command.rrb--;
-	}
+	*a = head;
 	return ;
 }
 
 static void calc_command_all(t_list **a)
 {
-	(*a)->command.all = (*a)->command.ra + (*a)->command.rb + (*a)->command.rr \
-	+ (*a)->command.rra + (*a)->command.rrb + (*a)->command.rrr;
+	t_list *head;
+
+	head = *a;
+	while (*a)
+	{
+		(*a)->command.all = (*a)->command.ra + (*a)->command.rb + (*a)->command.rr \
+		+ (*a)->command.rra + (*a)->command.rrb + (*a)->command.rrr;
+		*a = (*a)->next;
+	}
+	*a = head;
 	return ;
 }
 
@@ -51,7 +67,7 @@ static void count_b_rotate(t_list **a, t_list *b)
 	else
 		index = get_index(b, get_near_less_num(b, (*a)->num));
 	rb_count = index;
-	rrb_count = last_index - index -1;
+	rrb_count = last_index - index + 1;
 	if (rb_count <= rrb_count)
 		(*a)->command.rb = rb_count;
 	else if (rb_count > rrb_count)
