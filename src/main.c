@@ -24,7 +24,7 @@ int	main(int argc, char const *argv[])
 		return (ft_putstr_fd("Error\n", 2));
 	a = make_stack_a(argc, argv);
 	if (!a || same_num_check(a) == false)
-		return (ft_putstr_fd("Error\n", 2));
+		return (free_stack(&a), ft_putstr_fd("Error\n", 2));
 	b = NULL;
 	sort_start(&a, &b, ft_lstsize(a));
 	return (free_stack(&a), 0);
