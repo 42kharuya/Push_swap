@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_start.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 17:17:31 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/27 04:42:09 by kharuya          ###   ########.fr       */
+/*   Created: 2025/02/27 16:11:10 by kharuya           #+#    #+#             */
+/*   Updated: 2025/02/27 16:11:14 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ void	sort_start(t_list **a, t_list **b, int lst_size, bool *malloc_check)
 	else if (lst_size == 4)
 		sort_4(a, b, malloc_check);
 	else
-		sort_5to20(a, b, malloc_check);
+		sort_5_or_more(a, b, malloc_check);
 	return ;
 }
