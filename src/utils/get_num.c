@@ -1,16 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_near_num.c                                     :+:      :+:    :+:   */
+/*   get_num.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 19:50:11 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 19:50:25 by kharuya          ###   ########.fr       */
+/*   Created: 2025/02/27 04:01:19 by kharuya           #+#    #+#             */
+/*   Updated: 2025/02/27 04:03:10 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+int	get_min_num(t_list *stack)
+{
+	int	min_num;
+
+	min_num = stack->num;
+	while (stack)
+	{
+		if (min_num > stack->num)
+			min_num = stack->num;
+		stack = stack->next;
+	}
+	return (min_num);
+}
+
+int	get_max_num(t_list *stack)
+{
+	int	max_num;
+
+	max_num = stack->num;
+	while (stack)
+	{
+		if (max_num < stack->num)
+			max_num = stack->num;
+		stack = stack->next;
+	}
+	return (max_num);
+}
 
 int	get_near_less_num(t_list *b, int a_num)
 {

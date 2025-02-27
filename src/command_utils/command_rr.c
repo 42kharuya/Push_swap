@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:54:35 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 20:50:20 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/27 04:44:45 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,31 @@
 
 static void	reverse_rotate_a(t_list **a)
 {
-	int		last_index_num;
+	int		last_num;
 
 	*a = ft_lstlast(*a);
-	last_index_num = (*a)->num;
+	last_num = (*a)->num;
 	while ((*a)->pre != NULL)
 	{
 		(*a)->num = (*a)->pre->num;
 		*a = (*a)->pre;
 	}
-	(*a)->num = last_index_num;
+	(*a)->num = last_num;
 	return ;
 }
 
 static void	reverse_rotate_b(t_list **b)
 {
-	int		last_index_num;
+	int		last_num;
 
 	*b = ft_lstlast(*b);
-	last_index_num = (*b)->num;
+	last_num = (*b)->num;
 	while ((*b)->pre != NULL)
 	{
 		(*b)->num = (*b)->pre->num;
 		*b = (*b)->pre;
 	}
-	(*b)->num = last_index_num;
+	(*b)->num = last_num;
 	return ;
 }
 

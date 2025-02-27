@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:53:46 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 21:21:50 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/27 04:47:20 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ typedef struct s_list
 void	sa(t_list **a);
 void	sb(t_list **b);
 void	ss(t_list **a, t_list **b);
-void	pa(t_list **a, t_list **b);
-void	pb(t_list **a, t_list **b);
+void	pa(t_list **a, t_list **b, bool *malloc_check);
+void	pb(t_list **a, t_list **b, bool *malloc_check);
 void	ra(t_list **a);
 void	rb(t_list **b);
 void	rr(t_list **a, t_list **b);
@@ -69,20 +69,19 @@ t_list	*make_stack_a(int argc, char const *argv[]);
 void	compress(t_list **a);
 void	radix_sort(t_list **a, t_list **b);
 void	free_stack(t_list **stack);
-void	sort_start(t_list **a, t_list **b, int lst_size);
+void	sort_start(t_list **a, t_list **b, int lst_size, bool *malloc_check);
 void	sort_2(t_list **a);
 void	sort_3(t_list **a);
-void	sort_4(t_list **a, t_list **b);
-void	sort_5to20(t_list **a, t_list **b);
-void	sort_morethan_20(t_list **a, t_list **b);
-void	swap_smallest(t_list **a, t_list **b);
-bool	format_check(char const *argv[]);
-bool	same_num_check(t_list *a);
+void	sort_4(t_list **a, t_list **b, bool *malloc_check);
+void	sort_5_or_more(t_list **a, t_list **b, bool *malloc_check);
+void	swap_smallest(t_list **a, t_list **b, bool *malloc_check);
+bool	check_error_format(char const *argv[]);
+bool	check_error_samenum(t_list *a);
 int		*lst_into_array(t_list *a);
 int		get_min_num(t_list *stack);
 int		get_max_num(t_list *stack);
-void	turk_step_1(t_list **a, t_list **b);
-void	turk_step_2(t_list **a, t_list **b);
+void	turk_step_1(t_list **a, t_list **b, bool *malloc_check);
+void	turk_step_2(t_list **a, t_list **b, bool *malloc_check);
 int		get_near_less_num(t_list *b, int a_num);
 int		get_near_more_num(t_list *a, int b_num);
 int		get_index(t_list *stack, int num);
@@ -90,5 +89,8 @@ void	command_reset_lst(t_list **a, t_list **b);
 void	calc_operations_step1(t_list **a, t_list *b);
 void	calc_operations_step2(t_list *a, t_list **b);
 void	command_init(t_list **stack);
+bool	check_already_sorted(t_list *a);
+void	change_to_rr_rrr(t_list **b);
+void	calc_command_all(t_list **b);
 
 #endif

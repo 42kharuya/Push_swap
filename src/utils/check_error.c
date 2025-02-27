@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_check.c                                      :+:      :+:    :+:   */
+/*   check_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 19:49:37 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 19:49:46 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/27 04:30:09 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-bool	format_check(char const *argv[])
+bool	check_error_format(char const *argv[])
 {
 	int		i;
 	int		j;
@@ -41,7 +41,7 @@ bool	format_check(char const *argv[])
 	return (true);
 }
 
-bool	same_num_check(t_list *a)
+bool	check_error_samenum(t_list *a)
 {
 	int		*a_array;
 	int		i;
@@ -57,14 +57,10 @@ bool	same_num_check(t_list *a)
 		while (j < ft_lstsize(a))
 		{
 			if (a_array[j] == a_array[i])
-			{
-				free (a_array);
-				return (false);
-			}
+				return (free (a_array), false);
 			j++;
 		}
 		i++;
 	}
-	free (a_array);
-	return (true);
+	return (free (a_array), true);
 }

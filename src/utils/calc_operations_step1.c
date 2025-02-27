@@ -6,55 +6,13 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 21:03:01 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 22:15:33 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/27 03:56:38 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-#include <stdio.h>
 
-static void	change_to_rr_rrr(t_list **a)
-{
-	t_list	*head;
-
-	head = *a;
-	while (*a)
-	{
-		while ((*a)->command.ra > 0 && (*a)->command.rb > 0)
-		{
-			(*a)->command.rr++;
-			(*a)->command.ra--;
-			(*a)->command.rb--;
-		}
-		while ((*a)->command.rra > 0 && (*a)->command.rrb > 0)
-		{
-			(*a)->command.rrr++;
-			(*a)->command.rra--;
-			(*a)->command.rrb--;
-		}
-		*a = (*a)->next;
-	}
-	*a = head;
-	return ;
-}
-
-static void	calc_command_all(t_list **a)
-{
-	t_list	*head;
-
-	head = *a;
-	while (*a)
-	{
-		(*a)->command.all = (*a)->command.ra + (*a)->command.rb \
-		+ (*a)->command.rr + (*a)->command.rra + (*a)->command.rrb \
-		+ (*a)->command.rrr;
-		*a = (*a)->next;
-	}
-	*a = head;
-	return ;
-}
-
-static void	count_b_rotate(t_list **a, t_list *b)
+static void	step1_calc_dst(t_list **a, t_list *b)
 {
 	int		index;
 	int		last_index;
@@ -75,7 +33,7 @@ static void	count_b_rotate(t_list **a, t_list *b)
 	return ;
 }
 
-static void	count_a_rotate(t_list **a, t_list *b)
+static void	step1_calc_src(t_list **a, t_list *b)
 {
 	t_list		*head;
 	int			last_index;
@@ -94,7 +52,7 @@ static void	count_a_rotate(t_list **a, t_list *b)
 			(*a)->command.ra = ra_count;
 		else if (ra_count > rra_count)
 			(*a)->command.rra = rra_count;
-		count_b_rotate(a, b);
+		step1_calc_dst(a, b);
 		*a = (*a)->next;
 		index++;
 	}
@@ -104,7 +62,7 @@ static void	count_a_rotate(t_list **a, t_list *b)
 
 void	calc_operations_step1(t_list **a, t_list *b)
 {
-	count_a_rotate(a, b);
+	step1_calc_src(a, b);
 	change_to_rr_rrr(a);
 	calc_command_all(a);
 	return ;

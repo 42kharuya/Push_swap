@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:06:23 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 19:46:33 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/27 03:43:52 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,12 @@ void	sort_3(t_list **a)
 	return ;
 }
 
-void	sort_4(t_list **a, t_list **b)
+void	sort_4(t_list **a, t_list **b, bool *malloc_check)
 {
-	swap_smallest(a, b);
+	swap_smallest(a, b, malloc_check);
+	if (*malloc_check == false)
+		return ;
 	sort_3(a);
-	pa(a, b);
+	pa(a, b, malloc_check);
+	return ;
 }

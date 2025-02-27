@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_smallest.c                                    :+:      :+:    :+:   */
+/*   check_already_sorted.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 18:10:53 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/25 18:27:45 by kharuya          ###   ########.fr       */
+/*   Created: 2025/02/27 01:43:35 by kharuya           #+#    #+#             */
+/*   Updated: 2025/02/27 01:52:14 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	swap_smallest(t_list **a, t_list **b)
+bool	check_already_sorted(t_list *a)
 {
-	t_list	*head;
-	int		smallest_num;
-
-	head = *a;
-	smallest_num = (*a)->num;
-	*a = (*a)->next;
-	while (*a)
+	while (a->next)
 	{
-		if (smallest_num > (*a)->num)
-			smallest_num = (*a)->num;
-		*a = (*a)->next;
+		if (a->num > a->next->num)
+			return (false);
+		a = a->next;
 	}
-	*a = head;
-	while (1)
-	{
-		if ((*a)->num == smallest_num)
-			break ;
-		ra(a);
-	}
-	pb(a, b);
-	return ;
+	return (true);
 }
