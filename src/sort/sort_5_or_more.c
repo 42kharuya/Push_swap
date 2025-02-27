@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 16:11:32 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/27 16:11:37 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/27 17:28:55 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	chose_ra_or_rra(t_list **a)
 	int	index;
 	int	last_index;
 	int	ra_count;
-	int rra_count;
+	int	rra_count;
 
 	index = get_index(*a, get_min_num(*a));
 	last_index = ft_lstsize(*a) - 1;
