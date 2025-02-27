@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:53:46 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/27 17:03:41 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/27 22:10:04 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ void	command_init(t_list **stack);
 bool	check_already_sorted(t_list *a);
 void	change_to_rr_rrr(t_list **b);
 void	calc_command_all(t_list **b);
+void	compress(t_list **a, bool *malloc_check);
 
 #endif

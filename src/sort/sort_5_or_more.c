@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 16:11:32 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/27 17:28:55 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/27 22:11:41 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ static void	chose_ra_or_rra(t_list **a)
 
 void	sort_5_or_more(t_list **a, t_list **b, bool *malloc_check)
 {
-	pb(a, b, malloc_check);
+	compress(a, malloc_check);
 	if (*malloc_check == false)
 		return ;
 	pb(a, b, malloc_check);
 	if (*malloc_check == false)
 		return ;
+	pb(a, b, malloc_check);
 	turk_step_1(a, b, malloc_check);
 	if (*malloc_check == false)
 		return ;
