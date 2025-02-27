@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:53:46 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/27 04:47:20 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/02/27 17:03:41 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 
 //push_swap
 t_list	*make_stack_a(int argc, char const *argv[]);
-void	compress(t_list **a);
-void	radix_sort(t_list **a, t_list **b);
 void	free_stack(t_list **stack);
 void	sort_start(t_list **a, t_list **b, int lst_size, bool *malloc_check);
 void	sort_2(t_list **a);
