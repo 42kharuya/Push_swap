@@ -6,7 +6,7 @@
 /*   By: kharuya <haruya.0411.k@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:55:34 by kharuya           #+#    #+#             */
-/*   Updated: 2025/02/27 22:10:37 by kharuya          ###   ########.fr       */
+/*   Updated: 2025/03/04 16:46:29 by kharuya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ void	compress(t_list **a, bool *malloc_check)
 	{
 		*malloc_check = false;
 		return ;
-	}array = bubble_sort(array, ft_lstsize(*a));
+	}
+	array = bubble_sort(array, ft_lstsize(*a));
 	value_mapping(a, array, ft_lstsize(*a));
 	free (array);
 	return ;
